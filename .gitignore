@@ -7,7 +7,16 @@
 *.so
 *.dylib
 
-# Compiled Static libraries
+# Compiled Static Libraries
 *.lai
 *.la
 *.a
+
+# Project Files
+.cproject
+.project
+.wrmakefile
+.wrproject
+
+# Output Files
+PPC603gnu/
