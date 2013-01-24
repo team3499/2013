@@ -3,7 +3,7 @@
 #include "Commands/ExampleCommand.h"
 #include "CommandBase.h"
 
-class CommandBasedRobot : public IterativeRobot {
+class Team3499Robot : public IterativeRobot {
 private:
 	Command *autonomousCommand;
 	LiveWindow *lw;
@@ -39,5 +39,5 @@ private:
 	}
 };
 
-START_ROBOT_CLASS(CommandBasedRobot);
+START_ROBOT_CLASS(Team3499Robot);
 
