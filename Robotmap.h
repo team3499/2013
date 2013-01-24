@@ -91,9 +91,11 @@
 //     1 encoder on digital input
 #define THROWER_MOTOR_CHANNEL             PWM_5
 #define TILTER_MOTOR_CHANNEL              PWM_6
-#define TILTER_ENCODER_CHANNEL            DIO_6
+#define TILTER_ENCODER_A_CHANNEL          DIO_11
+#define TILTER_ENCODER_B_CHANNEL          DIO_12
 #define TURNER_MOTOR_CHANNEL              PWM_7
-#define TURNER_ENCODER_CHANNEL            DIO_7
+#define TURNER_ENCODER_A_CHANNEL          DIO_13
+#define TURNER_ENCODER_B_CHANNEL          DIO_14
 
 // Camera
 //   1 digital output
