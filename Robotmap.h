@@ -89,6 +89,8 @@
 //   Turner
 //     1 motor on Jaguar/Victor ESC
 //     1 encoder on digital input
+//   Feeder
+//     TBD
 #define THROWER_MOTOR_CHANNEL             PWM_5
 #define TILTER_MOTOR_CHANNEL              PWM_6
 #define TILTER_ENCODER_A_CHANNEL          DIO_11
