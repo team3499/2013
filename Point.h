@@ -23,10 +23,15 @@ public:
     Point                    operator-(const Point &p) const;
     void                     operator-=(const Point &p);
 
-    bool                     operator<(const Point &p) const;
-    bool                     operator>(const Point &p) const;
-    bool                     operator<=(const Point &p) const;
-    bool                     operator>=(const Point &p) const;
+    bool                     IsLeft(const Point &p) const;
+    bool                     IsRight(const Point &p) const;
+    bool                     IsAbove(const Point &p) const;
+    bool                     IsBelow(const Point &p) const;
+    bool                     IsAboveLeft(const Point &p) const;
+    bool                     IsAboveRight(const Point &p) const;
+    bool                     IsBelowRight(const Point &p) const;
+    bool                     IsBelowLeft(const Point &p) const;
+
     bool                     operator==(const Point &p) const;
     bool                     operator!=(const Point &p) const;
 

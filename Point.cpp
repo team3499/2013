@@ -47,20 +47,36 @@ void Point::operator-=(const Point &p ) {
     y -= p.y;
 }
 
-bool Point::operator<(const Point &p) const {
-    return true;
+bool Point::IsLeft(const Point &p) const {
+    return x <= p.x;
 }
 
-bool Point::operator>(const Point &p) const {
-    return true;
+bool Point::IsRight(const Point &p) const {
+    return x >= p.x;
 }
 
-bool Point::operator<=(const Point &p) const {
-    return true;
+bool Point::IsAbove(const Point &p) const {
+    return y >= p.y;
 }
 
-bool Point::operator>=(const Point &p) const {
-    return true;
+bool Point::IsBelow(const Point &p) const {
+    return y <= p.y;
+}
+
+bool Point::IsAboveLeft(const Point &p) const {
+    return IsAbove(p) && IsLeft(p);
+}
+
+bool Point::IsAboveRight(const Point &p) const {
+    return IsAbove(p) && IsRight(p);
+}
+
+bool Point::IsBelowRight(const Point &p) const {
+    return IsBelow(p) && IsRight(p);
+}
+
+bool Point::IsBelowLeft(const Point &p) const {
+    return IsBelow(p) && IsLeft(p);
 }
 
 bool Point::operator==(const Point &p) const {
