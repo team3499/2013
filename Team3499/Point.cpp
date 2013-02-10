@@ -2,6 +2,8 @@
 
 #include "Point.h"
 
+using namespace Team3499;
+
 Point::Point() {
     x = 0;
     y = 0;

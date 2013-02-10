@@ -1,8 +1,8 @@
 #ifndef TARGET_H
 #define TARGET_H
 
-#include "Point.h"
-#include "Rect.h"
+#include "Team3499/Point.h"
+#include "Team3499/Rect.h"
 
 class Target {
 
@@ -15,19 +15,19 @@ public:
     } ID;
                              Target(Target::ID id);
 
-    Point                    Position() const;  // position on the field floor
-    Rect                     Rectangle() const; // rect defined on target wall
+    Team3499::Point          Position() const;  // position on the field floor
+    Team3499::Rect           Rectangle() const; // rect defined on target wall
     int                      Height() const;    // height of center from floor
     int                      Value() const;     // point value during teleop
 
-    int                      DistanceTo(const Point &point) const;  // 3d distance
-    int                      HDistanceTo(const Point &point) const; // 2d distance on floor
+    int                      DistanceTo(const Team3499::Point &point) const;  // 3d distance
+    int                      HDistanceTo(const Team3499::Point &point) const; // 2d distance on floor
 
 private:
                              Target() {};
 
-    Point                    position;   // position on the field floor
-    Rect                     rectangle;  // rect defined on target wall
+    Team3499::Point          position;   // position on the field floor
+    Team3499::Rect           rectangle;  // rect defined on target wall
     int                      height;     // height of center from floor
     int                      value;      // point value during teleop
 
