@@ -2,7 +2,11 @@
 #define COMMAND_BASE_H
 
 #include "Commands/Command.h"
+
 #include "Subsystems/ExampleSubsystem.h"
+#include "Subsystems/ConfigSubsystem.h"
+#include "Subsystems/CameraLEDsSubsystem.h"
+
 #include "OI.h"
 
 
@@ -11,14 +15,19 @@
  * CommandBase stores creates and stores each control system. To access a
  * subsystem elsewhere in your code in your code use CommandBase.examplesubsystem
  */
-class CommandBase: public Command {
+class CommandBase : public Command {
+
 public:
-	CommandBase(const char *name);
-	CommandBase();
-	static void init();
-	// Create a single static instance of all of your subsystems
-	static ExampleSubsystem *examplesubsystem;
-	static OI *oi;
+                                 CommandBase(const char *name);
+                                 CommandBase();
+
+    static void                  init();
+
+    static ExampleSubsystem *    examplesubsystem;
+    static ConfigSubsystem *     configSubsystem;
+    static CameraLEDsSubsystem * cameraLEDsSubsystem;
+    static OI *                  oi;
+
 };
 
-#endif
+#endif /* COMMAND_BASE_H */
