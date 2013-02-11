@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "Rect.h"
 
+using namespace Team3499;
+
 Rect::Rect() {
     SetUpperLeft(Point(0,0));
     SetLowerRight(Point(0,0));

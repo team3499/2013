@@ -3,6 +3,8 @@
 
 #include "Point.h"
 
+namespace Team3499 {
+
 //
 // A rectangle defined by 2 points -- upper left and lower right.  Uses an
 // integer representation so choose a suitably small unit (cm or inch).
@@ -35,5 +37,6 @@ private:
 
 };
 
+} // namespace Team3499
 
 #endif /* RECT_H */

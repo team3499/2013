@@ -1,6 +1,8 @@
 #ifndef POINT_H
 #define POINT_H
 
+namespace Team3499 {
+
 //
 // A point on a 2D plane.  Uses an integer representation so choose a suitably
 // small unit (cm or inch).
@@ -38,5 +40,7 @@ public:
 private:
 
 };
+
+} // namespace Team3499
 
 #endif /* POINT_H */
