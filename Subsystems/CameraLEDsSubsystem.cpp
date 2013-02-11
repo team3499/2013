@@ -1,6 +1,6 @@
 
-#include "Subsystems/CameraLEDsSubsystem.h"
-#include "RobotMap.h"
+#include "CameraLEDsSubsystem.h"
+#include "../RobotMap.h"
 
 CameraLEDsSubsystem::CameraLEDsSubsystem() : Subsystem("CameraLEDsSubsystem") {
     greenDO   = new DigitalOutput(CAMERA_GREEN_LEDS_CHANNEL);

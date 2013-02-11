@@ -74,7 +74,7 @@
 //
 
 // Mechanum Drive
-//   4 motors on Jaguar ESCs
+//   4 motors on Victor ESCs
 #define DRIVE_FRONT_LEFT_CHANNEL          PWM_1
 #define DRIVE_FRONT_RIGHT_CHANNEL         PWM_2
 #define DRIVE_BACK_LEFT_CHANNEL           PWM_3
@@ -128,6 +128,7 @@
 //
 // Drive Control Assignments
 //
-
+#define DRIVE_GAMEPAD_PORT     1
+#define ACCESSORY_GAMEPAD_PORT 2
 
 #endif /* ROBOTMAP_H */

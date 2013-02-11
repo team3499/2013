@@ -1,5 +1,5 @@
 #include "ConfigSubsystem.h"
-#include "Robotmap.h"
+#include "../Robotmap.h"
 
 ConfigSubsystem::ConfigSubsystem() : Subsystem("ConfigSubsystem") {
     configInputCount = 3;   // must match the number of DigitalIOButtons allocated
