@@ -1,5 +1,5 @@
 #include "ShooterWheel.h"
-#include "Commands/ShooterWheelUserControl.h"
+#include "../Commands/ShooterWheelUserControl.h"
 #include "Jaguar.h"
 
 ShooterWheel::ShooterWheel(int port) : Subsystem("ShooterWheel") {

@@ -12,7 +12,7 @@ void ShooterWheelUserControl::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void ShooterWheelUserControl::Execute() {
-	shooterWheel->set(oi->accessoryPad->getLeftX()); // This also allows for the D-pad to be in controll, allowing for 100%-itiy
+	shooterWheel->setSpeed(oi->accessoryPad->GetLeftX()); // This also allows for the D-pad to be in control, allowing for 100%-itiy
 #warning This is only the controls for testing.
 }
 
