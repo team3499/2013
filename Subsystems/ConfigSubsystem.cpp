@@ -2,12 +2,13 @@
 #include "../Robotmap.h"
 
 ConfigSubsystem::ConfigSubsystem() : Subsystem("ConfigSubsystem") {
-    configInputCount = 3;   // must match the number of DigitalIOButtons allocated
+    configInputCount = 4;   // must match the number of DigitalIOButtons allocated
     configInput      = new DigitalIOButton*[configInputCount];
 
     configInput[0]   = new DigitalIOButton(CONFIG_0_CHANNEL);  // Pyramid position Left/Right
     configInput[1]   = new DigitalIOButton(CONFIG_1_CHANNEL);  // Pyramid position Front/Back
     configInput[2]   = new DigitalIOButton(CONFIG_2_CHANNEL);  // Unused
+    configInput[3]   = new DigitalIOButton(CONFIG_2_CHANNEL);  // Unused
 }
 
 ConfigSubsystem::~ConfigSubsystem() {
