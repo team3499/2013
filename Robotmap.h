@@ -110,6 +110,7 @@
 #define CONFIG_0_CHANNEL                  DIO_3
 #define CONFIG_1_CHANNEL                  DIO_4
 #define CONFIG_2_CHANNEL                  DIO_5
+#define CONFIG_3_CHANNEL                  DIO_6
 
 // Rangefinder Arduino
 //   1 digital output
