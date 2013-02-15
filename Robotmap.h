@@ -82,15 +82,15 @@
 
 // Triple 'T' Turret System
 //   Thrower
-//     1 motor on Jaguar/Victor ESC
+//     1 motor on Jaguar ESC
 //   Tilter
-//     1 motor on Jaguar/Victor ESC or spike relay
+//     1 motor on Jaguar ESC
 //     1 encoder on digital input
 //   Turner
-//     1 motor on Jaguar/Victor ESC
+//     1 motor on Victor ESC
 //     1 encoder on digital input
 //   Feeder
-//     TBD
+//     1 motor on Victor ESC
 #define THROWER_MOTOR_CHANNEL             PWM_5
 #define TILTER_MOTOR_CHANNEL              PWM_6
 #define TILTER_ENCODER_A_CHANNEL          DIO_11
@@ -98,6 +98,7 @@
 #define TURNER_MOTOR_CHANNEL              PWM_7
 #define TURNER_ENCODER_A_CHANNEL          DIO_13
 #define TURNER_ENCODER_B_CHANNEL          DIO_14
+#define FEEDER_MOTOR_CHANNEL              PWM_8
 
 // Camera
 //   1 digital output
