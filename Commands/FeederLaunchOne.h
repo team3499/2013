@@ -16,7 +16,7 @@ public:
     virtual void End();
     virtual void Interrupted();
 private:
-    Timer *t;
+    double time;
 };
 
 #endif // FeederLaunchOne_H

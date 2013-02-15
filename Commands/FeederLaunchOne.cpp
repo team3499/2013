@@ -8,8 +8,8 @@ FeederLaunchOne::FeederLaunchOne(){
 
 // Called just before this Command runs the first time
 void FeederLaunchOne::Initialize() {
-    // Start the timer
-    // start the motor
+    time = Timer::GetPPCTimestamp();
+    feeder->move(1.0);
 }
 
 
@@ -20,7 +20,8 @@ void FeederLaunchOne::Execute() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool FeederLaunchOne::IsFinished() {
-    // if the timer has gone on long enough, yes
+    if(Timer::GetPPCTimestamp() - time >= 0.695) // If the time is at that of one revolution, exit
+        return true;
     return false;
 }
 
