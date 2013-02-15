@@ -17,7 +17,9 @@ SOURCES += \
     ../Subsystems/ConfigSubsystem.cpp \
     ../Subsystems/CameraLEDsSubsystem.cpp \
     ../Team3499/Rect.cpp \
-    ../Team3499/Point.cpp
+    ../Team3499/Point.cpp \
+    ../Commands/ShooterWheelStop.cpp \
+    ../Commands/ShooterWheelStart.cpp
 
 OTHER_FILES += \
     ../sample.txt \
@@ -44,5 +46,7 @@ HEADERS += \
     ../Subsystems/ConfigSubsystem.h \
     ../Subsystems/CameraLEDsSubsystem.h \
     ../Team3499/Rect.h \
-    ../Team3499/Point.h
+    ../Team3499/Point.h \
+    ../Commands/ShooterWheelStop.h \
+    ../Commands/ShooterWheelStart.h
 

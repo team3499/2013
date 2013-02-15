@@ -2,18 +2,24 @@
 
 ShooterWheelUserControl::ShooterWheelUserControl() {
 	// Use Requires() here to declare subsystem dependencies
-	Requires(shooterWheel);
+    Requires(shooterWheel);
 }
 
 // Called just before this Command runs the first time
 void ShooterWheelUserControl::Initialize() {
-	
 }
 
 // Called repeatedly when this Command is scheduled to run
 void ShooterWheelUserControl::Execute() {
-	shooterWheel->setSpeed(oi->accessoryPad->GetLeftX()); // This also allows for the D-pad to be in control, allowing for 100%-itiy
-#warning This is only the controls for testing.
+    bool yes = oi->accessoryPad->GetNumberedButton(1); // xBox 'x' button
+    bool no  = oi->accessoryPad->GetNumberedButton(3); // xBox 'b' button
+
+    if(yes && !no){ // if the on button is pressed, but not the off,
+        spin = true;
+    } else if (!yes && no){ // if the off button is pressed, but not the on.
+        spin = false;
+    }
+    shooterWheel->setSpeed(1.0 * spin);
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -23,10 +29,11 @@ bool ShooterWheelUserControl::IsFinished() {
 
 // Called once after isFinished returns true
 void ShooterWheelUserControl::End() {
-	
+    shooterWheel->setSpeed(0.0);
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void ShooterWheelUserControl::Interrupted() {
+    End();
 }

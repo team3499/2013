@@ -8,12 +8,15 @@
  */
 class ShooterWheelUserControl: public CommandBase {
 public:
-	ShooterWheelUserControl();
+    ShooterWheelUserControl();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
-	virtual void Interrupted();
+    virtual void Interrupted();
+
+private:
+    bool spin;
 };
 
 #endif

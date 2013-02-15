@@ -8,6 +8,8 @@
 #include "Subsystems/CameraLEDsSubsystem.h"
 #include "Subsystems/Wheels.h"
 #include "Subsystems/ShooterWheel.h"
+#include "Subsystems/PanSubsystem.h"
+#include "Subsystems/TiltSubsystem.h"
 
 #include "OI.h"
 
@@ -30,6 +32,8 @@ public:
     static CameraLEDsSubsystem * cameraLEDsSubsystem;
     static ShooterWheel *        shooterWheel;
     static OI *                  oi;
+    static PanSubsystem *        pan;
+    static TiltSubsystem *       tilt;
 
 };
 

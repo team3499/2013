@@ -16,6 +16,8 @@ CameraLEDsSubsystem *  CommandBase::cameraLEDsSubsystem  = NULL;
 Wheels *               CommandBase::wheels               = NULL;
 OI *                   CommandBase::oi                   = NULL;
 ShooterWheel *         CommandBase::shooterWheel         = NULL;
+PanSubsystem *         CommandBase::pan                  = NULL;
+TiltSubsystem *        CommandBase::tilt                 = NULL;
 
 void CommandBase::init() {
     // Create a single static instance of all of your subsystems. The following
@@ -26,5 +28,7 @@ void CommandBase::init() {
     shooterWheel        = new ShooterWheel(THROWER_MOTOR_CHANNEL);
     configSubsystem     = new ConfigSubsystem();
     cameraLEDsSubsystem = new CameraLEDsSubsystem();
+    pan                 = new PanSubsystem(TURNER_MOTOR_CHANNEL);
+    tilt                = new TiltSubsystem(TILTER_MOTOR_CHANNEL);
     oi                  = new OI();
 }
