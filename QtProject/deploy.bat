@@ -1,0 +1,3 @@
+echo starting...
+ftp -A -s:ftp_commands
+echo done.

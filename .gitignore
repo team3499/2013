@@ -20,3 +20,9 @@
 
 # Output Files
 PPC603gnu/
+
+# Qt machine-dependent file
+QtProject/FRC-2013.pro.user
+
+# MakeGen.exe // Ethans custom crap.
+*.exe

@@ -1,0 +1,12 @@
+
+2013_partialImage/$(MODE_DIR)/2013_partialImage.o : $(OBJECTS_2013_partialImage)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc -r -nostdlib -Wl,-X  -o "$@" $(OBJECTS_2013_partialImage) $(LIBPATH) $(LIBS) $(ADDED_LIBPATH) $(ADDED_LIBS)  && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
+
+2013_partialImage/$(MODE_DIR)/2013_partialImage_compile_file : $(FILE) ;
+
+_clean :: 2013_partialImage/$(MODE_DIR)/2013_partialImage_clean
+
+2013_partialImage/$(MODE_DIR)/2013_partialImage_clean : 
+	$(TRACE_FLAG)if [ -d "2013_partialImage" ]; then cd "2013_partialImage"; rm -rf $(MODE_DIR); fi
+
+force : 

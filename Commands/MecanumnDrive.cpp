@@ -53,8 +53,31 @@ void MecanumnDrive::Execute() {
     rl[0] /= mx;
   }
   
+//  fr[0] *= -1;
+//  rr[0] *= -1;
+  
   // set them!
-  wheels->Set(fr[0], fl[0], rr[0], rl[0]);
+  bool neg[4];
+  neg[0] = (fl[0] < 0.0);
+  neg[1] = (fr[0] < 0.0);
+  neg[2] = (rl[0] < 0.0);
+  neg[3] = (rr[0] < 0.0);
+  
+  fl[0] *= fl[0];
+  fr[0] *= fr[0];
+  rl[0] *= rl[0];
+  rr[0] *= rr[0];
+  
+  if (neg[0]) // Invert these
+    fl[0] *= -1;
+  if (!neg[1])
+    fr[0] *= -1;
+  if (neg[2]) // Invert these
+    rl[0] *= -1;
+  if (!neg[3])
+    rr[0] *= -1;
+  
+  wheels->Set(fl[0], fr[0], rl[0], rr[0]);
 }
 
 // Make this return true when this Command no longer needs to run execute()

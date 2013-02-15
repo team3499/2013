@@ -1,0 +1,6 @@
+open 10.34.99.2:21
+send C:/WindRiver/2013/PPC603gnu/2013/Debug/2013.out /ni-rt/system/FRC_UserProgram.out
+close
+
+user "" ""
+
