@@ -26,3 +26,9 @@ QtProject/FRC-2013.pro.user
 
 # MakeGen.exe // Ethans custom crap.
 *.exe
+*.dll
+
+
+#its building here...
+QtProject/builder/2013
+QtProject/builder/2013_partialImage
