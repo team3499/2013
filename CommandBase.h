@@ -5,6 +5,7 @@
 
 #include "Subsystems/ExampleSubsystem.h"
 #include "Subsystems/ConfigSubsystem.h"
+#include "Subsystems/CameraSubsystem.h"
 #include "Subsystems/CameraLEDsSubsystem.h"
 #include "Subsystems/Wheels.h"
 #include "Subsystems/ShooterWheel.h"
@@ -27,8 +28,9 @@ public:
 
     static void                  init();
 
-	static Wheels *              wheels;
+    static Wheels *              wheels;
     static ConfigSubsystem *     configSubsystem;
+    static CameraSubsystem *     cameraSubsystem;
     static CameraLEDsSubsystem * cameraLEDsSubsystem;
     static ShooterWheel *        shooterWheel;
     static OI *                  oi;
