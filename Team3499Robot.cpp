@@ -2,20 +2,21 @@
 #include "Commands/Command.h"
 #include "Commands/ExampleCommand.h"
 #include "CommandBase.h"
+#include "AutonomousCommands/AutonomousCommand.h"
 
 class Team3499Robot : public IterativeRobot {
 private:
 	Command *autonomousCommand;
-	LiveWindow *lw;
+    LiveWindow *lw;
 	
 	virtual void RobotInit() {
 		CommandBase::init();
-		autonomousCommand = new ExampleCommand();
-		lw = LiveWindow::GetInstance();
+        autonomousCommand = new AutonomousCommand((unsigned char)'\12');
+        lw = LiveWindow::GetInstance();
 	}
 	
 	virtual void AutonomousInit() {
-		autonomousCommand->Start();
+        autonomousCommand->Start();
 	}
 	
 	virtual void AutonomousPeriodic() {
@@ -27,7 +28,10 @@ private:
 		// teleop starts running. If you want the autonomous to 
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
-		autonomousCommand->Cancel();
+        autonomousCommand->Cancel();
+        printf("\n--            --\n");
+        printf("-- Teleop Hit --\n");
+        printf("--            --\n\n");
 	}
 	
 	virtual void TeleopPeriodic() {
@@ -35,7 +39,7 @@ private:
 	}
 	
 	virtual void TestPeriodic() {
-		lw->Run();
+        lw->Run();
 	}
 };
 

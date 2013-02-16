@@ -1,37 +1,35 @@
-#include "FeederLaunchOne.h"
+#include "WaitCommand.h"
 
-FeederLaunchOne::FeederLaunchOne(){
+Wait2Command::Wait2Command(double duration): CommandBase("Wait2Command"){
     // Use Requires() here to declare subsystem dependencies
-    Requires(feeder);
+    this->duration = duration;
     SetInterruptible(false);
 }
 
 // Called just before this Command runs the first time
-void FeederLaunchOne::Initialize() {
+void Wait2Command::Initialize() {
     time = Timer::GetPPCTimestamp();
-    feeder->move(-1.0);
 }
 
 
 // Called repeatedly when this Command is scheduled to run
-void FeederLaunchOne::Execute() {
+void Wait2Command::Execute() {
     ;
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool FeederLaunchOne::IsFinished() {
-    if(Timer::GetPPCTimestamp() - time >= 0.8*4/3-.05) // If the time is at that of one revolution, exit
+bool Wait2Command::IsFinished() {
+    if(Timer::GetPPCTimestamp() - time >= duration) // If the time is at that of one revolution, exit
         return true;
     return false;
 }
 
 // Called once after isFinished returns true
-void FeederLaunchOne::End() {
-    feeder->move(0.0);
+void Wait2Command::End() {
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void FeederLaunchOne::Interrupted() {
+void Wait2Command::Interrupted() {
     End();
 }

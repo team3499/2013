@@ -31,7 +31,8 @@ SOURCES += \
     ../AutonomousCommands/MoveToSide.cpp \
     ../AutonomousCommands/MoveForward.cpp \
     ../AutonomousCommands/AutonomousCommand.cpp \
-    ../AutonomousCommands/MoveCommand.cpp
+    ../AutonomousCommands/MoveCommand.cpp \
+    ../AutonomousCommands/WaitCommand.cpp
 
 OTHER_FILES += \
     ../sample.txt \
@@ -73,5 +74,6 @@ HEADERS += \
     ../AutonomousCommands/MoveForward.h \
     ../AutonomousCommands/Aim.h \
     ../AutonomousCommands/AutonomousCommand.h \
-    ../AutonomousCommands/MoveCommand.h
+    ../AutonomousCommands/MoveCommand.h \
+    ../AutonomousCommands/WaitCommand.h
 
