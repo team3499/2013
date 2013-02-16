@@ -7,7 +7,7 @@
   * @author Ethan
   */
 class MoveForward : public CommandGroup {
-    MoveForward(int position);
+    MoveForward();
 };
 
 #endif /* #ifdef MOVE_FORWARD_H */

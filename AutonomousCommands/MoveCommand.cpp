@@ -3,7 +3,7 @@
 MoveCommand::MoveCommand(const int direction, double time, float speed) : CommandBase("MoveCommand")
 {
     Requires(wheels);
-    this->direction = direction; // This can be left and forward as an example.
+    this->direction = direction; // This can be left and forward (together) as an example.
     this->duration  = time;
     this->speed     = speed;
 }
