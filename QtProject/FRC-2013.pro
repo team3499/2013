@@ -27,7 +27,11 @@ SOURCES += \
     ../Subsystems/ConfigSubsystem.cpp \
     ../Subsystems/CameraLEDsSubsystem.cpp \
     ../Commands/UserControlFeeder.cpp \
-    ../Commands/FeederLaunchOne.cpp
+    ../Commands/FeederLaunchOne.cpp \
+    ../AutonomousCommands/MoveToSide.cpp \
+    ../AutonomousCommands/MoveForward.cpp \
+    ../AutonomousCommands/AutonomousCommand.cpp \
+    ../AutonomousCommands/MoveCommand.cpp
 
 OTHER_FILES += \
     ../sample.txt \
@@ -64,5 +68,10 @@ HEADERS += \
     ../Subsystems/ConfigSubsystem.h \
     ../Subsystems/CameraLEDsSubsystem.h \
     ../Commands/UserControlFeeder.h \
-    ../Commands/FeederLaunchOne.h
+    ../Commands/FeederLaunchOne.h \
+    ../AutonomousCommands/MoveToSide.h \
+    ../AutonomousCommands/MoveForward.h \
+    ../AutonomousCommands/Aim.h \
+    ../AutonomousCommands/AutonomousCommand.h \
+    ../AutonomousCommands/MoveCommand.h
 

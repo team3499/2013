@@ -113,6 +113,21 @@
 #define CONFIG_2_CHANNEL                  DIO_5
 #define CONFIG_3_CHANNEL                  DIO_6
 
+//      o    o    o    o
+//      |    |    |    |
+//     |^|  |^|  |^|  |^|
+//     |I|  |I|  |I|  |I|
+//     |_|  |_|  |_|  |_|
+//
+//      3    2    1    0
+// # of channel -- Up = on
+//
+// 0- Robot positioning 1
+// 1- Robot positioning 2
+// 2- Autonomous Config 1
+// 3- Autonomous Config 2
+//
+
 // Rangefinder Arduino
 //   1 digital output
 //   SPI bus

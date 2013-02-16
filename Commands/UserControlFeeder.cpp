@@ -14,7 +14,7 @@ void UserControlFeeder::Initialize() {
 void UserControlFeeder::Execute() {
     if(oi->accessoryPad->GetNumberedButton(8)){ // right bumper/trigger
         CommandBase *b = new FeederLaunchOne();
-        b->Run();
+        b->Start();
     }
 //    feeder->move(oi->accessoryPad->GetLeftX());
 }
