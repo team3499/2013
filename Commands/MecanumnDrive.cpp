@@ -27,6 +27,8 @@ void MecanumnDrive::Execute() {
   // Pan mode
   fr[1] = fl[1] = -pad->GetLeftX();
   rr[1] = rl[1] = pad->GetLeftX();
+  fl[1] *= -1;
+  rl[1] *= -1;
   fr[1] += pad->GetLeftY();
   fl[1] += pad->GetLeftY();
   rr[1] += pad->GetLeftY();

@@ -16,7 +16,8 @@ void UserControlFeeder::Execute() {
         CommandBase *b = new FeederLaunchOne();
         b->Start();
     }
-//    feeder->move(oi->accessoryPad->GetLeftX());
+//    feeder->move((float)oi->accessoryPad->GetNumberedButton(7));
+    feeder->move(oi->accessoryPad->GetRightX());
 }
 
 // Make this return true when this Command no longer needs to run execute()
