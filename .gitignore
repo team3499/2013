@@ -22,13 +22,16 @@
 PPC603gnu/
 
 # Qt machine-dependent file
-QtProject/FRC-2013.pro.user
+FRC-2013.pro.user
 
 # MakeGen.exe // Ethans custom crap.
 *.exe
 *.dll
 
+Makefile
+Makefile.Debug
+Makefile.Release
 
 #its building here...
-QtProject/builder/2013
-QtProject/builder/2013_partialImage
+Deploy/builder/2013
+Deploy/builder/2013_partialImage

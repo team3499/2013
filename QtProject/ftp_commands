@@ -1,4 +1,0 @@
-open 10.34.99.2
-send C:/WindRiver/workspace/2013/QtProject/builder/2013/Debug/2013.out /ni-rt/system/FRC_UserProgram.out
-close
-quit

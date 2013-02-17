@@ -1,0 +1,4 @@
+TODO list
+
+optimize the copying if its to stay.
+also if it stays, try to fix why the ÿ is showing up.
