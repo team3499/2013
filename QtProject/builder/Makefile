@@ -176,6 +176,10 @@ endif
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/Feeder.o : $(PRJ_ROOT_DIR)/Subsystems/Feeder.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/PanSubsystem.o : $(PRJ_ROOT_DIR)/Subsystems/PanSubsystem.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -200,6 +204,10 @@ endif
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/FeederLaunchOne.o : $(PRJ_ROOT_DIR)/Commands/FeederLaunchOne.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/MecanumnDrive.o : $(PRJ_ROOT_DIR)/Commands/MecanumnDrive.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -216,11 +224,35 @@ endif
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/UserControlFeeder.o : $(PRJ_ROOT_DIR)/Commands/UserControlFeeder.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/UserControlPan.o : $(PRJ_ROOT_DIR)/Commands/UserControlPan.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
 2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/UserControlTilt.o : $(PRJ_ROOT_DIR)/Commands/UserControlTilt.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/AutonomousCommand.o : $(PRJ_ROOT_DIR)/AutonomousCommands/AutonomousCommand.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/MoveCommand.o : $(PRJ_ROOT_DIR)/AutonomousCommands/MoveCommand.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/MoveForward.o : $(PRJ_ROOT_DIR)/AutonomousCommands/MoveForward.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/MoveToSide.o : $(PRJ_ROOT_DIR)/AutonomousCommands/MoveToSide.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/WaitCommand.o : $(PRJ_ROOT_DIR)/AutonomousCommands/WaitCommand.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -245,18 +277,26 @@ OBJECTS_2013_partialImage = 2013_partialImage/$(MODE_DIR)/Objects/2013/Team3499/
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/CameraLEDsSubsystem.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/ConfigSubsystem.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/ExampleSubsystem.o  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/Feeder.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/PanSubsystem.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/ShooterWheel.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/TiltSsubsystem.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/Wheels.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Gamepad/Gamepad.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/ExampleCommand.o  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/FeederLaunchOne.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/MecanumnDrive.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/ShooterWheelStart.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/ShooterWheelStop.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/ShooterWheelUserControl.o  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/UserControlFeeder.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/UserControlPan.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/UserControlTilt.o  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/AutonomousCommand.o  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/MoveCommand.o  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/MoveForward.o  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/MoveToSide.o  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/WaitCommand.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/CommandBase.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/OI.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Target.o  \
@@ -279,18 +319,26 @@ DEP_FILES := 2013_partialImage/$(MODE_DIR)/Objects/2013/Team3499/Point.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/CameraLEDsSubsystem.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/ConfigSubsystem.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/ExampleSubsystem.d  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/Feeder.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/PanSubsystem.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/ShooterWheel.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/TiltSsubsystem.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/Wheels.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Gamepad/Gamepad.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/ExampleCommand.d  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/FeederLaunchOne.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/MecanumnDrive.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/ShooterWheelStart.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/ShooterWheelStop.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/ShooterWheelUserControl.d  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/UserControlFeeder.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/UserControlPan.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/UserControlTilt.d  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/AutonomousCommand.d  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/MoveCommand.d  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/MoveForward.d  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/MoveToSide.d  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/WaitCommand.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/CommandBase.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/OI.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Target.d  \

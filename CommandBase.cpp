@@ -1,6 +1,6 @@
 #include "CommandBase.h"
 #include "Commands/Scheduler.h"
-#include "Robotmap.h"  // Need to include for the drive wheel defines
+#include "Robotmap.h"  // Need to include for the por defines
 
 CommandBase::CommandBase(const char *name) : Command(name) {
 
@@ -19,8 +19,12 @@ OI *                   CommandBase::oi                   = NULL;
 ShooterWheel *         CommandBase::shooterWheel         = NULL;
 PanSubsystem *         CommandBase::pan                  = NULL;
 TiltSubsystem *        CommandBase::tilt                 = NULL;
+Feeder *               CommandBase::feeder               = NULL;
 
 void CommandBase::init() {
+
+    printf("-- CommandBase::init() --\n");
+
     // Create a single static instance of all of your subsystems. The following
     // line should be repeated for each subsystem in the project.
     wheels              = new Wheels(DRIVE_FRONT_LEFT_CHANNEL, DRIVE_FRONT_RIGHT_CHANNEL,
@@ -32,5 +36,6 @@ void CommandBase::init() {
     cameraLEDsSubsystem = new CameraLEDsSubsystem();
     pan                 = new PanSubsystem(TURNER_MOTOR_CHANNEL);
     tilt                = new TiltSubsystem(TILTER_MOTOR_CHANNEL);
+    feeder              = new Feeder(FEEDER_MOTOR_CHANNEL);
     oi                  = new OI();
 }

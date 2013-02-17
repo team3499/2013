@@ -3,6 +3,7 @@
 #include "Commands/ExampleCommand.h"
 #include "Commands/CameraLEDsBlink.h"
 #include "Commands/CameraTest.h"
+#include "AutonomousCommands/AutonomousCommand.h"
 #include "CommandBase.h"
 
 class Team3499Robot : public IterativeRobot {
@@ -14,10 +15,11 @@ private:
 
     virtual void RobotInit() {
         CommandBase::init();
-        autonomousCommand = new ExampleCommand();
+        autonomousCommand = new AutonomousCommand(0x0C);
         blinkCommand      = new CameraLEDsBlink();
         cameraTestCommand = new CameraTest();
         lw = LiveWindow::GetInstance();
+
         CommandBase::cameraLEDsSubsystem->GreenOff();
         CommandBase::cameraLEDsSubsystem->BlueOff();
     }
@@ -36,6 +38,10 @@ private:
         // continue until interrupted by another command, remove
         // this line or comment it out.
         autonomousCommand->Cancel();
+        printf("\n--            --\n");
+        printf("-- Teleop Hit --\n");
+        printf("--            --\n\n");
+
         cameraTestCommand->Start();   // TEMP - move to OI input from gamepad
     }
 

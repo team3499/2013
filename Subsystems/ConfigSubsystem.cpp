@@ -7,8 +7,8 @@ ConfigSubsystem::ConfigSubsystem() : Subsystem("ConfigSubsystem") {
 
     configInput[0]   = new DigitalIOButton(CONFIG_0_CHANNEL);  // Pyramid position Left/Right
     configInput[1]   = new DigitalIOButton(CONFIG_1_CHANNEL);  // Pyramid position Front/Back
-    configInput[2]   = new DigitalIOButton(CONFIG_2_CHANNEL);  // Unused
-    configInput[3]   = new DigitalIOButton(CONFIG_3_CHANNEL);  // Unused
+    configInput[2]   = new DigitalIOButton(CONFIG_2_CHANNEL);  // Autonomous configuration
+    configInput[3]   = new DigitalIOButton(CONFIG_3_CHANNEL);  // Autonomous configuration
 }
 
 ConfigSubsystem::~ConfigSubsystem() {

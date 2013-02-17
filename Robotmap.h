@@ -82,15 +82,15 @@
 
 // Triple 'T' Turret System
 //   Thrower
-//     1 motor on Jaguar/Victor ESC
+//     1 motor on Jaguar ESC
 //   Tilter
-//     1 motor on Jaguar/Victor ESC or spike relay
+//     1 motor on Jaguar ESC
 //     1 encoder on digital input
 //   Turner
-//     1 motor on Jaguar/Victor ESC
+//     1 motor on Victor ESC
 //     1 encoder on digital input
 //   Feeder
-//     TBD
+//     1 motor on Victor ESC
 #define THROWER_MOTOR_CHANNEL             PWM_5
 #define TILTER_MOTOR_CHANNEL              PWM_6
 #define TILTER_ENCODER_A_CHANNEL          DIO_11
@@ -98,6 +98,7 @@
 #define TURNER_MOTOR_CHANNEL              PWM_7
 #define TURNER_ENCODER_A_CHANNEL          DIO_13
 #define TURNER_ENCODER_B_CHANNEL          DIO_14
+#define FEEDER_MOTOR_CHANNEL              PWM_8
 
 // Camera
 //   1 digital output
@@ -111,6 +112,21 @@
 #define CONFIG_1_CHANNEL                  DIO_4
 #define CONFIG_2_CHANNEL                  DIO_5
 #define CONFIG_3_CHANNEL                  DIO_6
+
+//      o    o    o    o
+//      |    |    |    |
+//     |^|  |^|  |^|  |^|
+//     |I|  |I|  |I|  |I|
+//     |_|  |_|  |_|  |_|
+//
+//      3    2    1    0
+// # of channel -- Up = on
+//
+// 0- Robot positioning 1
+// 1- Robot positioning 2
+// 2- Autonomous Config 1
+// 3- Autonomous Config 2
+//
 
 // Rangefinder Arduino
 //   1 digital output

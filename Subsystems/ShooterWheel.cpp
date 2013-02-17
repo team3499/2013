@@ -17,5 +17,5 @@ void ShooterWheel::InitDefaultCommand() {
 
 
 void ShooterWheel::setSpeed(float speed){
-    speedController->Set(speed);
+    speedController->Set(-speed); // it needs to spin 'backwards'
 }

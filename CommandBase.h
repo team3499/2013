@@ -11,6 +11,7 @@
 #include "Subsystems/ShooterWheel.h"
 #include "Subsystems/PanSubsystem.h"
 #include "Subsystems/TiltSubsystem.h"
+#include "Subsystems/Feeder.h"
 
 #include "OI.h"
 
@@ -36,6 +37,7 @@ public:
     static OI *                  oi;
     static PanSubsystem *        pan;
     static TiltSubsystem *       tilt;
+    static Feeder *              feeder;
 
 };
 
