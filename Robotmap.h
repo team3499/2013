@@ -101,7 +101,7 @@
 
 // Camera
 //   1 digital output
-#define CAMERA_IP_ADDR                    "10.34.99.90"
+#define CAMERA_IP_ADDR                    "10.34.99.11"
 #define CAMERA_GREEN_LEDS_CHANNEL         DIO_1
 #define CAMERA_BLUE_LEDS_CHANNEL          DIO_2
 

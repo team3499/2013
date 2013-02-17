@@ -17,11 +17,11 @@ public:
                              ImageProcessor();
     virtual                  ~ImageProcessor();
 
-    const BinaryImage *      Process(RGBImage * image);
+    BinaryImage *            Process(ColorImage * image);
 
-    const BinaryImage *      GetThresholdImage() const;
-    const BinaryImage *      GetConvexHullImage() const;
-    const BinaryImage *      GetFilteredImage() const;
+    BinaryImage *            GetThresholdImage() const;
+    BinaryImage *            GetConvexHullImage() const;
+    BinaryImage *            GetFilteredImage() const;
 
     void                     SetThreshold(const Threshold &threshold);
     void                     SetThreshold(simple_threshold threshold);

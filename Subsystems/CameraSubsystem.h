@@ -11,8 +11,8 @@ public:
                               CameraSubsystem(const char * filename = 0);
     virtual                   ~CameraSubsystem();
 
-    const ColorImage *        CaptureImage();                     // captures a new image
-    const ColorImage *        GetImage();                         // returns existing image
+    ColorImage *              CaptureImage();                     // captures a new image
+    ColorImage *              GetImage();                         // returns existing image
     void                      RetainImage(const char * filename); // writes captures to flash
 
 private:

@@ -31,7 +31,7 @@ CameraSubsystem::~CameraSubsystem() {
 //
 // The returned pointer is owned by CameraSubsystem and should
 // not be deleted.
-const ColorImage * CameraSubsystem::CaptureImage() {
+ColorImage * CameraSubsystem::CaptureImage() {
     delete image;
 
     if (useImageFile) {
@@ -49,7 +49,7 @@ const ColorImage * CameraSubsystem::CaptureImage() {
 //
 // The returned pointer is owned by CameraSubsystem and should
 // not be deleted.
-const ColorImage * CameraSubsystem::GetImage() {
+ColorImage * CameraSubsystem::GetImage() {
     if (image == 0) { CaptureImage(); }
 
     return image;
@@ -59,9 +59,14 @@ const ColorImage * CameraSubsystem::GetImage() {
 // a file.  Will activate camera captures if they were previously
 // disabled by reading a file on capture.
 void CameraSubsystem::RetainImage(const char * filename) {
-    strncpy(imageFilename, filename, CAMERA_SUBSYSTEM_FILENAME_LENGTH - 1);
-    imageFilename[CAMERA_SUBSYSTEM_FILENAME_LENGTH - 1] = '\0';
+    if (useImageFile) { return; }   // not compatible - just bail out
 
-    useImageFile        = false;
-    preserveImage       = true;
+    if (filename == 0 || strlen(filename) == 0) {
+        imageFilename[0] = '\0';
+        preserveImage = false;
+    } else {
+        strncpy(imageFilename, filename, CAMERA_SUBSYSTEM_FILENAME_LENGTH - 1);
+        imageFilename[CAMERA_SUBSYSTEM_FILENAME_LENGTH - 1] = '\0';
+        preserveImage       = true;
+    }
 }

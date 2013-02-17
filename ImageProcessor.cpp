@@ -17,7 +17,7 @@ ImageProcessor::~ImageProcessor() {
     delete filteredImage;
 }
 
-const BinaryImage * ImageProcessor::Process(RGBImage * image) {
+BinaryImage * ImageProcessor::Process(ColorImage * image) {
     ParticleFilterCriteria2 criteria[] = { particleCriteria };
 
     thresholdImage  = image->ThresholdHSV(threshold);
@@ -27,15 +27,15 @@ const BinaryImage * ImageProcessor::Process(RGBImage * image) {
     return filteredImage;
 }
 
-const BinaryImage * ImageProcessor::GetThresholdImage() const {
+BinaryImage * ImageProcessor::GetThresholdImage() const {
     return thresholdImage;
 }
 
-const BinaryImage * ImageProcessor::GetConvexHullImage() const {
+BinaryImage * ImageProcessor::GetConvexHullImage() const {
     return convexHullImage;
 }
 
-const BinaryImage * ImageProcessor::GetFilteredImage() const {
+BinaryImage * ImageProcessor::GetFilteredImage() const {
     return filteredImage;
 }
 
