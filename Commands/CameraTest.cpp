@@ -6,10 +6,12 @@ CameraTest::CameraTest() {
     Requires(cameraSubsystem);
     Requires(cameraLEDsSubsystem);
 
-    timer = new Timer;
+    timer     = new Timer;
+    finished  = false;
 }
 
 void CameraTest::Initialize() {
+    finished = false;
     timer->Reset();
     timer->Start();
 }
@@ -18,8 +20,7 @@ void CameraTest::Execute() {
     cameraLEDsSubsystem->GreenOn();
 
     // Allow time for the LEDs to light up
-    timer->Reset();
-    while(!timer->HasPeriodPassed(0.1)) { }   // min tested was 80ms
+    if(!timer->HasPeriodPassed(0.2)) { return; }   // min tested was 80ms
 
     // Capture an image from the camera and save it to flash
     timer->Reset();
@@ -28,9 +29,16 @@ void CameraTest::Execute() {
     cameraSubsystem->RetainImage(NULL);  // stop retaining
     printf("[CAMERA] Captured image written to /cameratest.jpg in %.1f ms\n", timer->Get() * 1000);
 
+    // Load preferences for filtering threshold image
+    Preferences * prefs = Preferences::GetInstance();
+    Threshold threshold = Threshold(prefs->GetInt("hue_low", 100), prefs->GetInt("hue_high", 140),
+                                    prefs->GetInt("sat_low", 90), prefs->GetInt("sat_high", 255),
+                                    prefs->GetInt("lum_low", 20), prefs->GetInt("lum_high", 255));
+
     // Process the captured image
     timer->Reset();
     ImageProcessor * ip = new ImageProcessor();
+    ip->SetThreshold(threshold);
     ip->Process(image);
     printf("[CAMERA] Image processed in %.1f ms\n", timer->Get() * 1000);
 
@@ -47,6 +55,8 @@ void CameraTest::Execute() {
 
     tr->OutputScores();
 
+    finished = true;
+
     delete tr;
     delete ip;
 
@@ -54,10 +64,11 @@ void CameraTest::Execute() {
 }
 
 bool CameraTest::IsFinished() {
-    return true;
+    return finished;
 }
 
 void CameraTest::End() {
+    finished = true;
     timer->Stop();
     timer->Reset();
 }

@@ -16,6 +16,7 @@ public:
 
 private:
     Timer *                  timer;
+    bool                     finished;
 
 };
 

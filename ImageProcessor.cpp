@@ -2,7 +2,7 @@
 
 #define AREA_MINIMUM 500
 
-ImageProcessor::ImageProcessor() : threshold(Threshold(60, 100, 90, 255, 20, 255)) {   // GREEN
+ImageProcessor::ImageProcessor() : threshold(Threshold(100, 140, 90, 255, 20, 255)) {   // GREEN HSL
     thresholdImage  = 0;
     convexHullImage = 0;
     filteredImage   = 0;

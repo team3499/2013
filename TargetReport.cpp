@@ -2,8 +2,8 @@
 #include "Math.h"
 
 //Camera constants used for distance calculation
-#define X_IMAGE_RES 320//X Image resolution in pixels, should be 160, 320 or 640
-//#define VIEW_ANGLE 48//Axis 206 camera
+#define X_IMAGE_RES 320  //X Image resolution in pixels, should be 160, 320 or 640
+//#define VIEW_ANGLE 48  //Axis 206 camera
 #define VIEW_ANGLE 43.5  //Axis M1011 camera
 #define PI 3.141592653
 
@@ -11,7 +11,7 @@
 #define RECTANGULARITY_LIMIT 60
 #define ASPECT_RATIO_LIMIT 75
 #define X_EDGE_LIMIT 40
-#define Y_EDGE_LIMIT 60
+#define Y_EDGE_LIMIT 55  // was 60
 
 //Edge profile constants used for hollowness score calculation
 #define XMAXSIZE 24
@@ -75,11 +75,29 @@ void TargetReport::OutputScores() {
         if(scoreCompare(scores[i], false)) {
             printf("particle: %d  is a High Goal  centerX: %f  centerY: %f \n", i, report->center_mass_x_normalized, report->center_mass_y_normalized);
             printf("Distance: %f \n", computeDistance(thresholdImage, report, false));
+            printf("Scores: rect(%.2f) arOuter(%.2f) arInner(%.2f) xEdge(%.2f) yEdge (%.2f)\n",
+                   scores[i].rectangularity,
+                   scores[i].aspectRatioOuter,
+                   scores[i].aspectRatioInner,
+                   scores[i].xEdge,
+                   scores[i].yEdge);
         } else if (scoreCompare(scores[i], true)) {
             printf("particle: %d  is a Middle Goal  centerX: %f  centerY: %f \n", i, report->center_mass_x_normalized, report->center_mass_y_normalized);
             printf("Distance: %f \n", computeDistance(thresholdImage, report, true));
+            printf("Scores: rect(%.2f) arOuter(%.2f) arInner(%.2f) xEdge(%.2f) yEdge (%.2f)\n",
+                   scores[i].rectangularity,
+                   scores[i].aspectRatioOuter,
+                   scores[i].aspectRatioInner,
+                   scores[i].xEdge,
+                   scores[i].yEdge);
         } else {
             printf("particle: %d  is not a goal  centerX: %f  centerY: %f \n", i, report->center_mass_x_normalized, report->center_mass_y_normalized);
+            printf("Scores: rect(%.2f) arOuter(%.2f) arInner(%.2f) xEdge(%.2f) yEdge (%.2f)\n",
+                   scores[i].rectangularity,
+                   scores[i].aspectRatioOuter,
+                   scores[i].aspectRatioInner,
+                   scores[i].xEdge,
+                   scores[i].yEdge);
         }
         printf("rect: %f  ARinner: %f \n", scores[i].rectangularity, scores[i].aspectRatioInner);
         printf("ARouter: %f  xEdge: %f  yEdge: %f  \n", scores[i].aspectRatioOuter, scores[i].xEdge, scores[i].yEdge);
