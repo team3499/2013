@@ -20,7 +20,7 @@ ImageProcessor::~ImageProcessor() {
 BinaryImage * ImageProcessor::Process(ColorImage * image) {
     ParticleFilterCriteria2 criteria[] = { particleCriteria };
 
-    thresholdImage  = image->ThresholdHSV(threshold);
+    thresholdImage  = image->ThresholdHSL(threshold);
     convexHullImage = thresholdImage->ConvexHull(false);
     filteredImage   = convexHullImage->ParticleFilter(criteria, 1);
 
@@ -58,16 +58,19 @@ void ImageProcessor::SetParticleCriteria(const ParticleFilterCriteria2 &criteria
 }
 
 void ImageProcessor::WriteImages(const char * baseFilename) const {
-    BinaryImage * images[] = { thresholdImage, convexHullImage, filteredImage, 0 };
-    size_t length          = strlen(baseFilename);
-    char * filename        = new char[length + 8];
+    size_t length   = strlen(baseFilename);
+    char * filename = new char[length + 8];
 
     strcpy(filename, baseFilename);
-    for (BinaryImage * image = images[0]; image != 0; image++) {
-        strcpy(&filename[length], "-th.bmp");
-        filename[length+7] = '\0';
-        image->Write(filename);
-    }
+    strcpy(&filename[length], "-th.bmp");
+    filename[length+7] = '\0';
+    thresholdImage->Write(filename);
+    strcpy(&filename[length], "-ch.bmp");
+    filename[length+7] = '\0';
+    convexHullImage->Write(filename);
+    strcpy(&filename[length], "-fl.bmp");
+    filename[length+7] = '\0';
+    filteredImage->Write(filename);
 
     delete[] filename;
 }

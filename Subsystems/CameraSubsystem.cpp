@@ -33,12 +33,13 @@ CameraSubsystem::~CameraSubsystem() {
 // not be deleted.
 ColorImage * CameraSubsystem::CaptureImage() {
     delete image;
+    image = 0;
 
     if (useImageFile) {
-        image = new RGBImage(imageFilename);
+        image = new HSLImage(imageFilename);
     } else {
-        camera->GetImage(image);
-        if (preserveImage) { image->Write(imageFilename); }
+        image = camera->GetImage();
+        if (preserveImage && image != 0) { image->Write(imageFilename); }
     }
 
     return image;

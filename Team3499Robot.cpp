@@ -24,6 +24,14 @@ private:
         CommandBase::cameraLEDsSubsystem->BlueOff();
     }
 
+    virtual void DisabledInit() {
+
+    }
+
+    virtual void DisabledPeriodic() {
+
+    }
+
     virtual void AutonomousInit() {
         autonomousCommand->Start();
     }
