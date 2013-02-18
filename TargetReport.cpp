@@ -3,8 +3,8 @@
 
 //Camera constants used for distance calculation
 #define X_IMAGE_RES 320//X Image resolution in pixels, should be 160, 320 or 640
-#define VIEW_ANGLE 48//Axis 206 camera
-//#define VIEW_ANGLE 43.5  //Axis M1011 camera
+//#define VIEW_ANGLE 48//Axis 206 camera
+#define VIEW_ANGLE 43.5  //Axis M1011 camera
 #define PI 3.141592653
 
 //Score limits used for target identification
