@@ -75,10 +75,12 @@
 
 // Mechanum Drive
 //   4 motors on Victor ESCs
+//   1 Gyro on analog
 #define DRIVE_FRONT_LEFT_CHANNEL          PWM_1
 #define DRIVE_FRONT_RIGHT_CHANNEL         PWM_2
 #define DRIVE_BACK_LEFT_CHANNEL           PWM_3
 #define DRIVE_BACK_RIGHT_CHANNEL          PWM_4
+#define CHASSIS_GYRO_CHANNEL              AIO_1
 
 // Triple 'T' Turret System
 //   Thrower
@@ -88,7 +90,8 @@
 //     1 encoder on digital input
 //   Turner
 //     1 motor on Victor ESC
-//     1 encoder on digital input
+//     ? 1 encoder on digital input
+//     1 gyroscope on analog input
 //   Feeder
 //     1 motor on Victor ESC
 #define THROWER_MOTOR_CHANNEL             PWM_5
@@ -98,6 +101,7 @@
 #define TURNER_MOTOR_CHANNEL              PWM_7
 #define TURNER_ENCODER_A_CHANNEL          DIO_13
 #define TURNER_ENCODER_B_CHANNEL          DIO_14
+#define SUSAN_GYRO_CHANNEL                AIO_2
 #define FEEDER_MOTOR_CHANNEL              PWM_8
 
 // Camera
@@ -144,7 +148,7 @@
 
 //
 // Drive Control Assignments
-//
+//  2 controllers
 #define DRIVE_GAMEPAD_PORT     1
 #define ACCESSORY_GAMEPAD_PORT 2
 

@@ -144,6 +144,7 @@ Gamepad::DPadDirection Gamepad::GetDPad()
 {
     float x = GetRawAxis(kDPadXAxisNum);
     float y = GetRawAxis(kDPadYAxisNum);
+    // this is wrong.
 
     if (x < -0.5 && y < -0.5)
         return kUpLeft;
@@ -163,5 +164,26 @@ Gamepad::DPadDirection Gamepad::GetDPad()
         return kRight;
 
   return kCenter;
+}
+
+// output range [-1.0, 0.0]
+double Gamepad::GetLeftTrigger(){
+    double d = ap_ds->GetStickAxis(a_port, kTriggerAxisNum);
+    if (d > 0.0)
+        return 0.0;
+    return d;
+}
+
+// output range [0.0, 1.0]
+double Gamepad::GetRightTrigger(){
+    double d = ap_ds->GetStickAxis(a_port, kTriggerAxisNum);
+    if (d < 0.0)
+        return 0.0;
+    return d;
+}
+
+// output range [-1.0, 1.0]
+double Gamepad::GetTriggerAxis(){
+    return ap_ds->GetStickAxis(a_port, kTriggerAxisNum);
 }
 

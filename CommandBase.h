@@ -11,6 +11,7 @@
 #include "Subsystems/PanSubsystem.h"
 #include "Subsystems/TiltSubsystem.h"
 #include "Subsystems/Feeder.h"
+#include "Gyro.h"
 
 #include "OI.h"
 
@@ -36,6 +37,8 @@ public:
     static PanSubsystem *        pan;
     static TiltSubsystem *       tilt;
     static Feeder *              feeder;
+    static Gyro *                chassisGyro;
+    static Gyro *                susanGyro;
 
 };
 

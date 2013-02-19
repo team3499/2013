@@ -14,6 +14,9 @@ public:
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
+private:
+    bool   lastWasDriveStrait;
+    double lastGyroAngle;
 };
 
 #endif
