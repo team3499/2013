@@ -1,6 +1,6 @@
 #include "CommandBase.h"
 #include "Commands/Scheduler.h"
-#include "Robotmap.h"  // Need to include for the por defines
+#include "Robotmap.h"  // Need to include for the port defines
 
 CommandBase::CommandBase(const char *name) : Command(name) {
 
@@ -20,6 +20,8 @@ ShooterWheel *         CommandBase::shooterWheel         = NULL;
 PanSubsystem *         CommandBase::pan                  = NULL;
 TiltSubsystem *        CommandBase::tilt                 = NULL;
 Feeder *               CommandBase::feeder               = NULL;
+Gyro *                 CommandBase::chassisGyro          = NULL;
+Gyro *                 CommandBase::susanGyro            = NULL;
 
 void CommandBase::init() {
 
@@ -37,5 +39,7 @@ void CommandBase::init() {
     pan                 = new PanSubsystem(TURNER_MOTOR_CHANNEL);
     tilt                = new TiltSubsystem(TILTER_MOTOR_CHANNEL);
     feeder              = new Feeder(FEEDER_MOTOR_CHANNEL);
+    chassisGyro         = new Gyro(CHASSIS_GYRO_CHANNEL); // Analog 1
+    susanGyro           = new Gyro(SUSAN_GYRO_CHANNEL);   // Analog 2
     oi                  = new OI();
 }
