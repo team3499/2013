@@ -2,7 +2,6 @@
 #include "Commands/Command.h"
 #include "Commands/ExampleCommand.h"
 #include "Commands/CameraLEDsBlink.h"
-#include "Commands/CameraTest.h"
 #include "AutonomousCommands/AutonomousCommand.h"
 #include "CommandBase.h"
 
@@ -17,7 +16,6 @@ private:
         CommandBase::init();
         autonomousCommand = new AutonomousCommand(0x0C);
         blinkCommand      = new CameraLEDsBlink();
-        cameraTestCommand = new CameraTest();
         lw = LiveWindow::GetInstance();
 
         CommandBase::cameraLEDsSubsystem->GreenOff();
@@ -25,7 +23,8 @@ private:
     }
 
     virtual void DisabledInit() {
-
+        CommandBase::cameraLEDsSubsystem->GreenOff();
+        CommandBase::cameraLEDsSubsystem->BlueOff();
     }
 
     virtual void DisabledPeriodic() {
@@ -45,12 +44,11 @@ private:
         // teleop starts running. If you want the autonomous to
         // continue until interrupted by another command, remove
         // this line or comment it out.
+
         autonomousCommand->Cancel();
         printf("\n--            --\n");
         printf("-- Teleop Hit --\n");
         printf("--            --\n\n");
-
-        cameraTestCommand->Start();   // TEMP - move to OI input from gamepad
     }
 
     virtual void TeleopPeriodic() {

@@ -16,8 +16,10 @@ public:
 
 private:
     Timer *                  timer;
-    bool                     finished;
 
+    bool                     finished;
+    bool                     greenOn;
+    bool                     blueOn;
 };
 
 #endif /* CAMERA_TEST_H */

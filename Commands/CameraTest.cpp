@@ -14,23 +14,34 @@ void CameraTest::Initialize() {
     finished = false;
     timer->Reset();
     timer->Start();
+
+    greenOn = cameraLEDsSubsystem->IsGreenOn();
+    blueOn  = cameraLEDsSubsystem->IsBlueOn();
 }
 
 void CameraTest::Execute() {
     cameraLEDsSubsystem->GreenOn();
+    cameraLEDsSubsystem->BlueOff();
 
     // Allow time for the LEDs to light up
-    if(!timer->HasPeriodPassed(0.2)) { return; }   // min tested was 80ms
+    if(!timer->HasPeriodPassed(0.1)) { return; }   // min tested was 80ms
+
+    Preferences * prefs = Preferences::GetInstance();
 
     // Capture an image from the camera and save it to flash
     timer->Reset();
-    cameraSubsystem->RetainImage("/cameratest.jpg");
-    ColorImage * image = cameraSubsystem->CaptureImage();
-    cameraSubsystem->RetainImage(NULL);  // stop retaining
-    printf("[CAMERA] Captured image written to /cameratest.jpg in %.1f ms\n", timer->Get() * 1000);
+    ColorImage * image;
+    if (prefs->GetInt("image_retain", 1) == 1) {
+        cameraSubsystem->RetainImage("/cameratest.jpg");
+        image = cameraSubsystem->CaptureImage();
+        cameraSubsystem->RetainImage(NULL);  // stop retaining
+        printf("[CAMERA] Captured image and wrote to /cameratest.jpg in %.1f ms\n", timer->Get() * 1000);
+    } else {
+        image = cameraSubsystem->CaptureImage();
+        printf("[CAMERA] Captured image in %.1f ms\n", timer->Get() * 1000);
+    }
 
     // Load preferences for filtering threshold image
-    Preferences * prefs = Preferences::GetInstance();
     Threshold threshold = Threshold(prefs->GetInt("hue_low", 100), prefs->GetInt("hue_high", 140),
                                     prefs->GetInt("sat_low", 90), prefs->GetInt("sat_high", 255),
                                     prefs->GetInt("lum_low", 20), prefs->GetInt("lum_high", 255));
@@ -43,9 +54,11 @@ void CameraTest::Execute() {
     printf("[CAMERA] Image processed in %.1f ms\n", timer->Get() * 1000);
 
     // Write the processed images to flash
-    timer->Reset();
-    ip->WriteImages("/cameratest");
-    printf("[CAMERA] Processed images written to /cameratest.*.bmp in %.1f ms\n", timer->Get() * 1000);
+    if (prefs->GetInt("image_retain", 1) == 1) {
+        timer->Reset();
+        ip->WriteImages("/cameratest");
+        printf("[CAMERA] Processed images written to /cameratest.*.bmp in %.1f ms\n", timer->Get() * 1000);
+    }
 
     // Generate a target report
     timer->Reset();
@@ -59,8 +72,6 @@ void CameraTest::Execute() {
 
     delete tr;
     delete ip;
-
-    cameraLEDsSubsystem->GreenOff();
 }
 
 bool CameraTest::IsFinished() {
@@ -68,6 +79,8 @@ bool CameraTest::IsFinished() {
 }
 
 void CameraTest::End() {
+    if (blueOn) { cameraLEDsSubsystem->BlueOn(); }
+    if (!greenOn) { cameraLEDsSubsystem->GreenOff(); }
     finished = true;
     timer->Stop();
     timer->Reset();

@@ -21,7 +21,7 @@ void CameraLEDsBlink::Initialize() {
 }
 
 void CameraLEDsBlink::Execute() {
-    if (timer->HasPeriodPassed(0.250)) {
+    if (timer->HasPeriodPassed(0.500)) {
         cameraLEDsSubsystem->GreenToggle();
         cameraLEDsSubsystem->BlueToggle();
         count++;
@@ -29,7 +29,7 @@ void CameraLEDsBlink::Execute() {
 }
 
 bool CameraLEDsBlink::IsFinished() {
-    return count > 5;
+    return false;
 }
 
 void CameraLEDsBlink::End() {

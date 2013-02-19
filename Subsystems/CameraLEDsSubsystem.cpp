@@ -1,6 +1,7 @@
 
 #include "CameraLEDsSubsystem.h"
-#include "../RobotMap.h"
+#include "Commands/CameraLEDsBlink.h"
+#include "RobotMap.h"
 
 CameraLEDsSubsystem::CameraLEDsSubsystem() : Subsystem("CameraLEDsSubsystem") {
     greenDO   = new DigitalOutput(CAMERA_GREEN_LEDS_CHANNEL);
@@ -13,7 +14,7 @@ CameraLEDsSubsystem::CameraLEDsSubsystem() : Subsystem("CameraLEDsSubsystem") {
 }
 
 void CameraLEDsSubsystem::InitDefaultCommand() {
-    // No default command
+    SetDefaultCommand(new CameraLEDsBlink);
 }
 
 void CameraLEDsSubsystem::GreenOn() {
