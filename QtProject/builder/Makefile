@@ -168,6 +168,10 @@ endif
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/CameraSubsystem.o : $(PRJ_ROOT_DIR)/Subsystems/CameraSubsystem.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/ConfigSubsystem.o : $(PRJ_ROOT_DIR)/Subsystems/ConfigSubsystem.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -197,6 +201,14 @@ endif
 
 
 2013_partialImage/$(MODE_DIR)/Objects/2013/Gamepad/Gamepad.o : $(PRJ_ROOT_DIR)/Gamepad/Gamepad.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/CameraLEDsBlink.o : $(PRJ_ROOT_DIR)/Commands/CameraLEDsBlink.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/CameraTest.o : $(PRJ_ROOT_DIR)/Commands/CameraTest.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -260,11 +272,19 @@ endif
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+2013_partialImage/$(MODE_DIR)/Objects/2013/ImageProcessor.o : $(PRJ_ROOT_DIR)/ImageProcessor.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 2013_partialImage/$(MODE_DIR)/Objects/2013/OI.o : $(PRJ_ROOT_DIR)/OI.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
 2013_partialImage/$(MODE_DIR)/Objects/2013/Target.o : $(PRJ_ROOT_DIR)/Target.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+2013_partialImage/$(MODE_DIR)/Objects/2013/TargetReport.o : $(PRJ_ROOT_DIR)/TargetReport.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -275,6 +295,7 @@ endif
 OBJECTS_2013_partialImage = 2013_partialImage/$(MODE_DIR)/Objects/2013/Team3499/Point.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Team3499/Rect.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/CameraLEDsSubsystem.o  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/CameraSubsystem.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/ConfigSubsystem.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/ExampleSubsystem.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/Feeder.o  \
@@ -283,6 +304,8 @@ OBJECTS_2013_partialImage = 2013_partialImage/$(MODE_DIR)/Objects/2013/Team3499/
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/TiltSsubsystem.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/Wheels.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Gamepad/Gamepad.o  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/CameraLEDsBlink.o  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/CameraTest.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/ExampleCommand.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/FeederLaunchOne.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/MecanumnDrive.o  \
@@ -298,8 +321,10 @@ OBJECTS_2013_partialImage = 2013_partialImage/$(MODE_DIR)/Objects/2013/Team3499/
 	2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/MoveToSide.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/WaitCommand.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/CommandBase.o  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/ImageProcessor.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/OI.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Target.o  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/TargetReport.o  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Team3499Robot.o 
 
 
@@ -317,6 +342,7 @@ force :
 DEP_FILES := 2013_partialImage/$(MODE_DIR)/Objects/2013/Team3499/Point.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Team3499/Rect.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/CameraLEDsSubsystem.d  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/CameraSubsystem.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/ConfigSubsystem.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/ExampleSubsystem.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/Feeder.d  \
@@ -325,6 +351,8 @@ DEP_FILES := 2013_partialImage/$(MODE_DIR)/Objects/2013/Team3499/Point.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/TiltSsubsystem.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Subsystems/Wheels.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Gamepad/Gamepad.d  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/CameraLEDsBlink.d  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/CameraTest.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/ExampleCommand.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/FeederLaunchOne.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Commands/MecanumnDrive.d  \
@@ -340,8 +368,10 @@ DEP_FILES := 2013_partialImage/$(MODE_DIR)/Objects/2013/Team3499/Point.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/MoveToSide.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/AutonomousCommands/WaitCommand.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/CommandBase.d  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/ImageProcessor.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/OI.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Target.d  \
+	2013_partialImage/$(MODE_DIR)/Objects/2013/TargetReport.d  \
 	2013_partialImage/$(MODE_DIR)/Objects/2013/Team3499Robot.d 
 -include $(DEP_FILES)
 

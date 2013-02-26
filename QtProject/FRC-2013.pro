@@ -32,7 +32,12 @@ SOURCES += \
     ../AutonomousCommands/MoveForward.cpp \
     ../AutonomousCommands/AutonomousCommand.cpp \
     ../AutonomousCommands/MoveCommand.cpp \
-    ../AutonomousCommands/WaitCommand.cpp
+    ../AutonomousCommands/WaitCommand.cpp \
+    ../Commands/CameraLEDsBlink.cpp \
+    ../Commands/CameraTest.cpp \
+    ../ImageProcessor.cpp \
+    ../Subsystems/CameraSubsystem.cpp \
+    ../TargetReport.cpp
 
 OTHER_FILES += \
     ../sample.txt \
@@ -75,5 +80,10 @@ HEADERS += \
     ../AutonomousCommands/Aim.h \
     ../AutonomousCommands/AutonomousCommand.h \
     ../AutonomousCommands/MoveCommand.h \
-    ../AutonomousCommands/WaitCommand.h
+    ../AutonomousCommands/WaitCommand.h \
+    ../Commands/CameraLEDsBlink.h \
+    ../Commands/CameraTest.h \
+    ../ImageProcessor.h \
+    ../Subsystems/CameraSubsystem.h \
+    ../TargetReport.h
 

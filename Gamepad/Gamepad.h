@@ -55,13 +55,13 @@ public:
     double GetTriggerAxis();
 
 protected:
-    static const UINT32 kLeftYAxisNum  = 1;
-    static const UINT32 kLeftXAxisNum  = 2;
-    static const UINT32 kRightYAxisNum = 3;
+    static const UINT32 kLeftYAxisNum  = 2;
+    static const UINT32 kLeftXAxisNum  = 1;
+    static const UINT32 kRightYAxisNum = 5;
     static const UINT32 kRightXAxisNum = 4;
     static const UINT32 kDPadXAxisNum  = 5;
     static const UINT32 kDPadYAxisNum  = 6;
-    static const UINT32 kTriggerAxisNum = 5;
+    static const UINT32 kTriggerAxisNum = 3;
 
     static const unsigned kLeftAnalogStickButton = 9;
     static const unsigned kRightAnalogStickButton = 10;

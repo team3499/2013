@@ -1,7 +1,7 @@
 #ifndef CAMERA_TEST_H
 #define CAMERA_TEST_H
 
-#include "CommandBase.h"
+#include "../CommandBase.h"
 
 class CameraTest : public CommandBase {
 

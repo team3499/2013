@@ -3,35 +3,34 @@
 bool zero(double x, double prescision = 0.001){
     return (x < prescision && x > -prescision);
 }
+
+float absf(float x){
+    return x < 0.0 ? -x : x;
+}
+
+float maxf(float x, float y){
+    return x > y ? x : y;
+}
+
 //  ___
 // / | \
 //(--+--)
 // \_|_/
 //
-void printout(float rx, float ry, float lx, float ly){
-    float cur[4] = {rx, ry, lx, ly};
-    std::cout << "RX\t\tRY\t\tLX\t\tLY\n";
-    for (int i = 0; i < 4; i++){
-        std::cout << "(";
-        if(cur[i] > .75){
-            std::cout << "------|";
-        } else if(cur[i] > .50){
-            std::cout << "-----|-";
-        } else if(cur[i] > .25){
-            std::cout << "----|--";
-        } else if(cur[i] < .75){
-            std::cout << "|------";
-        } else if(cur[i] > .50){
-            std::cout << "-|-----";
-        } else if(cur[i] > .25){
-            std::cout << "--|----";
-        } else {
-            std::cout << "---|---";
-        }
-        std::cout << ")\t";
-    }
-    std::cout << "\n";
-    std::cout << rx << "\t" << ry << "\t" << lx << "\t" << ly << "\n";
+void printout(float rx, float ry, float lx, float ly, float trig){
+
+    //std::cout << "    ___      ___      ___      ___" << std::endl;
+    //std::cout << "   / | \    / | \    / | \    / | \" << std::endl;
+    //std::cout << "  (--+--)  (--+--)  (--+--)  (--+--)   (--+--)" << std::endl;
+    //std::cout << "   \_|_/    \_|_/    \_|_/    \_|_/" << std::endl;
+    //    ___      ___      ___      ___
+    //   / | \    / | \    / | \    / | \
+    //  (--+--)  (--+--)  (--+--)  (--+--)   (--+--)
+    //   \_|_/    \_|_/    \_|_/    \_|_/
+
+
+    //std::cout << "Drive: left (" << lx << "," << ly << ") right (" << rx << "," << ry << ") trigger " << trig << std::endl;
+    printf("Drive: left (%.6f,%.6f) right (%.6f,%.6f) trigger %.6f\n", lx, ly, rx, ry, trig);
 }
 
 MecanumnDrive::MecanumnDrive() {
@@ -50,56 +49,34 @@ void MecanumnDrive::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void MecanumnDrive::Execute() {
   Gamepad *pad = oi->drivePad;
-  float fr[4] = {0.0, 0.0, 0.0, 0.0}; // front right -- out, pan, normal, gyro compensation
-  float fl[4] = {0.0, 0.0, 0.0, 0.0}; // front left  -- out, pan, normal, gyro compensation
-  float rr[4] = {0.0, 0.0, 0.0, 0.0}; // rear right  -- out, pan, normal, gyro compensation
-  float rl[4] = {0.0, 0.0, 0.0, 0.0}; // rear left   -- out, pan, normal, gyro compensation
+  float fr[3] = {0.0, 0.0, 0.0}; // front right -- out, pan, normal, gyro compensation
+  float fl[3] = {0.0, 0.0, 0.0}; // front left  -- out, pan, normal, gyro compensation
+  float rr[3] = {0.0, 0.0, 0.0}; // rear right  -- out, pan, normal, gyro compensation
+  float rl[3] = {0.0, 0.0, 0.0}; // rear left   -- out, pan, normal, gyro compensation
   
   // Pan mode
-  fr[1] = fl[1] = pad->GetLeftX();
-  rr[1] = rl[1] = -pad->GetLeftX();
-  fr[1] += pad->GetLeftY();
-  fl[1] -= pad->GetLeftY();
-  rr[1] += pad->GetLeftY();
-  rl[1] -= pad->GetLeftY();
+  fr[1] = fl[1] = pad->GetRightX();
+  rr[1] = rl[1] = -pad->GetRightX();
+  fr[1] += pad->GetRightY();
+  fl[1] -= pad->GetRightY();
+  rr[1] += pad->GetRightY();
+  rl[1] -= pad->GetRightY();
 
   // 'normal' mode
-  fl[2] = rl[2] = -pad->GetRightX();
-  fr[2] = rr[2] = pad->GetRightX();
+  fl[2] = rl[2] = pad->GetLeftX();
+  fr[2] = rr[2] = pad->GetLeftX();
 
-  printout(pad->GetRightX(), pad->GetRightY(), pad->GetLeftX(), pad->GetLeftY());
-
-  fr[2] -= pad->GetTriggerAxis();
+  fr[2] += pad->GetTriggerAxis();
   fl[2] -= pad->GetTriggerAxis();
-  rr[2] -= pad->GetTriggerAxis();
+  rr[2] += pad->GetTriggerAxis();
   rl[2] -= pad->GetTriggerAxis();
 
-  // third option?
-//  if(lastWasDriveStrait){
-//      fl[3] = rl[3] = (lastGyroAngle - chassisGyro->GetAngle())/1080;
-//      fr[3] = rr[3] = (lastGyroAngle + chassisGyro->GetAngle())/1080;
-//  }
-  if(zero(pad->GetRightX())){
-      lastWasDriveStrait = true;
-      double angle = chassisGyro->GetAngle();
-
-      //while(angle >= 360.0)
-      //    angle -= 360;
-      //while(angle <  000.0)
-      //    angle += 360;
-      //if(zero(angle)){
-      //    angle = 0.0;
-      //}
-      lastGyroAngle = angle;
-  }
-
-
-  fr[0]=fr[1]+fr[2]+fr[3];
-  fl[0]=fl[1]+fl[2]+fl[3];
-  rr[0]=rr[1]+rr[2]+rr[3];
-  rl[0]=rl[1]+rl[2]+rl[3];
+  fr[0]=fr[1]+fr[2];
+  fl[0]=fl[1]+fl[2];
+  rr[0]=rr[1]+rr[2];
+  rl[0]=rl[1]+rl[2];
   
-  float mx = max(fr[0], max(fl[0], max(rr[0], rl[0])));
+  float mx = maxf(absf(fr[0]), absf(maxf(absf(fl[0]), absf(maxf(absf(rr[0]), absf(rl[0]))))));
 #warning negative as max
   
   // this might be better as something like % 1
@@ -133,6 +110,15 @@ void MecanumnDrive::Execute() {
     rl[0] *= -1;
   if (neg[3])
     rr[0] *= -1;
+
+//  if(zero(fl[0]), .01)
+//      fl[0] = 0.0;
+//  if(zero(fr[0]), .01)
+//      fr[0] = 0.0;
+//  if(zero(rl[0]), .01)
+//      rl[0] = 0.0;
+//  if(zero(rr[0]), .01)
+//      rr[0] = 0.0;
   
   wheels->Set(fl[0], fr[0], rl[0], rr[0]);
 }

@@ -1,5 +1,5 @@
-#include "Subsystems/CameraSubsystem.h"
-#include "RobotMap.h"
+#include "CameraSubsystem.h"
+#include "../RobotMap.h"
 
 #include "Vision/RGBImage.h"
 

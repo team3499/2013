@@ -1,7 +1,7 @@
 
 #include "CameraLEDsSubsystem.h"
-#include "Commands/CameraLEDsBlink.h"
-#include "RobotMap.h"
+#include "../Commands/CameraLEDsBlink.h"
+#include "../RobotMap.h"
 
 CameraLEDsSubsystem::CameraLEDsSubsystem() : Subsystem("CameraLEDsSubsystem") {
     greenDO   = new DigitalOutput(CAMERA_GREEN_LEDS_CHANNEL);

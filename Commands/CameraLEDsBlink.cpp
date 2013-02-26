@@ -1,4 +1,4 @@
-#include "Commands/CameraLEDsBlink.h"
+#include "CameraLEDsBlink.h"
 
 CameraLEDsBlink::CameraLEDsBlink() {
     Requires(cameraLEDsSubsystem);

@@ -1,6 +1,6 @@
-#include "Commands/CameraTest.h"
-#include "ImageProcessor.h"
-#include "TargetReport.h"
+#include "CameraTest.h"
+#include "../ImageProcessor.h"
+#include "../TargetReport.h"
 
 CameraTest::CameraTest() {
     Requires(cameraSubsystem);
