@@ -1,23 +1,20 @@
-#ifndef Wait2Command_H
-#define Wait2Command_H
+#ifndef GAMEPADTESTING_H
+#define GAMEPADTESTING_H
 
 #include "../CommandBase.h"
-#include "Timer.h"
 
 /**
  * @author Ethan
  */
-class Wait2Command: public CommandBase {
+class GamepadTesting : public CommandBase
+{
 public:
-    Wait2Command(double duration);
+    GamepadTesting();
     virtual void Initialize();
     virtual void Execute();
     virtual bool IsFinished();
     virtual void End();
     virtual void Interrupted();
-private:
-    double time;
-    double duration;
 };
 
-#endif // Wait2Command_H
+#endif // GAMEPADTESTING_H

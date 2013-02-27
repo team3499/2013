@@ -3,17 +3,6 @@
 
 #include "Commands/Command.h"
 
-#include "Subsystems/ExampleSubsystem.h"
-#include "Subsystems/ConfigSubsystem.h"
-#include "Subsystems/CameraSubsystem.h"
-#include "Subsystems/CameraLEDsSubsystem.h"
-#include "Subsystems/Wheels.h"
-#include "Subsystems/ShooterWheel.h"
-#include "Subsystems/PanSubsystem.h"
-#include "Subsystems/TiltSubsystem.h"
-#include "Subsystems/Feeder.h"
-#include "Gyro.h"
-
 #include "OI.h"
 
 
@@ -30,17 +19,7 @@ public:
 
     static void                  init();
 
-    static Wheels *              wheels;
-    static ConfigSubsystem *     configSubsystem;
-    static CameraSubsystem *     cameraSubsystem;
-    static CameraLEDsSubsystem * cameraLEDsSubsystem;
-    static ShooterWheel *        shooterWheel;
     static OI *                  oi;
-    static PanSubsystem *        pan;
-    static TiltSubsystem *       tilt;
-    static Feeder *              feeder;
-    static Gyro *                chassisGyro;
-    static Gyro *                susanGyro;
 
 };
 

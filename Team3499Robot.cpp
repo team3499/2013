@@ -1,30 +1,21 @@
 #include "WPILib.h"
-#include "Commands/Command.h"
-#include "Commands/ExampleCommand.h"
-#include "Commands/CameraLEDsBlink.h"
-#include "AutonomousCommands/AutonomousCommand.h"
+#include "Commands/GamepadTesting.h"
 #include "CommandBase.h"
 
 class Team3499Robot : public IterativeRobot {
 private:
-    Command * autonomousCommand;
-    Command * blinkCommand;
-    Command * cameraTestCommand;
+
+    Command * gamepadTesting;
+
     LiveWindow *lw;
 
     virtual void RobotInit() {
         CommandBase::init();
-        autonomousCommand = new AutonomousCommand(0x0C);
-        blinkCommand      = new CameraLEDsBlink();
         lw = LiveWindow::GetInstance();
-
-        CommandBase::cameraLEDsSubsystem->GreenOff();
-        CommandBase::cameraLEDsSubsystem->BlueOff();
+        gamepadTesting = new GamepadTesting();
     }
 
     virtual void DisabledInit() {
-        CommandBase::cameraLEDsSubsystem->GreenOff();
-        CommandBase::cameraLEDsSubsystem->BlueOff();
     }
 
     virtual void DisabledPeriodic() {
@@ -32,7 +23,6 @@ private:
     }
 
     virtual void AutonomousInit() {
-        autonomousCommand->Start();
     }
 
     virtual void AutonomousPeriodic() {
@@ -44,11 +34,10 @@ private:
         // teleop starts running. If you want the autonomous to
         // continue until interrupted by another command, remove
         // this line or comment it out.
-
-        autonomousCommand->Cancel();
         printf("\n--            --\n");
         printf("-- Teleop Hit --\n");
         printf("--            --\n\n");
+        gamepadTesting->Start();
     }
 
     virtual void TeleopPeriodic() {
